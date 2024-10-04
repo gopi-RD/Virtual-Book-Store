@@ -92,7 +92,7 @@ const App=()=>{
 
 
     return (
-        <BookContext.Provider value={{bookList,addCollections,updateCollections,removeBookfromCollection,isToggleBook,isShownButton}}>
+        <BookContext.Provider value={{bookList,addCollections,updateCollections,removeBookfromCollection,isToggleBook}}>
            <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={HomePage}/>
