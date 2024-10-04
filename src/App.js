@@ -77,9 +77,16 @@ const App=()=>{
     }
 
     const isToggleBook=(id)=>{
-        const updatedList=bookList.map(book=>book.id===id? {...book, isAddLibrary:!book.isAddLibrary}:book)
-        setBookList(updatedList)
+        setBookList(prevBookList=>({
+            prevBookList:prevBookList.map(book=>{
+                if (book.id===id){
+                    return {...book, isAddLibrary:!book.isAddLibrary}
+                }
+                return book
+        })
+        }))
     }
+    
 
 
     return (
