@@ -33,11 +33,17 @@ const MyLibraryPage =()=>{
                             </div>
                             <ul className="book-list-items">
                                     
-                                { 
+                                { filteredBooks.length>0?
                                         (
                                         filteredBooks.map(eachItem=>(
                                             <BookCard bookDetails={eachItem} key={eachItem.id} isButton={true} />
                                         )) )
+
+                                        : (
+                                            <div className="empty-container">
+                                                <p className="empty-text">Library is Empty </p>
+                                            </div>
+                                        )
                                 }
                                 
                             </ul>    

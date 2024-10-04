@@ -56,3 +56,12 @@
     justify-content: center;
     margin-top: 40px;
 }
+.empty-container{
+    text-align: center;
+    margin-top: 100px;
+}
+.empty-text{
+    font-size: 24px;
+    color: #ccc;
+    font-weight: 600;
+}
