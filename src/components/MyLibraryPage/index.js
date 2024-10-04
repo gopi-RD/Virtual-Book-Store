@@ -15,6 +15,7 @@ const MyLibraryPage =()=>{
                 value=>{
                     const {addCollections} = value; 
                     console.log(addCollections);
+                    console.log(addCollections[0][0])
                     
                    
                     let filteredBooks = addCollections.filter(book => book.title.toLowerCase().includes(searchBook.toLowerCase()) || book.author.toLowerCase().includes(searchBook.toLowerCase()) || book.genre.toLowerCase().includes(searchBook.toLowerCase())); 
