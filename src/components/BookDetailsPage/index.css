@@ -1,0 +1,81 @@
+.book-details-container{
+    background-color: #000000;
+    height:90vh;
+    padding-top: 40px;
+}
+.book-data-container{
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    width: 90%;
+    margin: auto;
+    
+}
+.book-img{
+    width: 500px;
+    height: 600px;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+.title{
+    font-size: 28px;
+    font-weight: bold;
+    color: #333333;
+}
+.content-text{
+    color: #666666;
+    font-size: 22px;
+    font-weight: 400;
+
+}
+.author-and-genre-container{
+    display: flex;
+    align-items: center;
+}
+.book-author{
+    color: #9e1010;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.book-genre{
+    color: #13379b;
+    font-size: 20px;
+    font-weight:bold;
+    margin-left: 40px;
+}
+.rating-container{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.book-rating{
+    font-size: 18px;
+    background-color: #2f5fa8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.book-publication{
+    font-size: 16px;
+    background-color: #a81824;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 40px;
+}
+.add-library{
+    background-color: #13379b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 40px;
+    border: none;
+    outline: none;
+}

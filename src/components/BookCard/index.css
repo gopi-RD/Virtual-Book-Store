@@ -1,0 +1,56 @@
+.book-card{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
+.image-url{
+    border-radius: 12px;
+    width: 270px;
+    height: 350px;
+}
+
+.book-title{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+.book-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.author{
+    font-size: 18px;
+    color: #999999;
+}
+.genre{
+    font-size: 18px;
+    color: #999999;
+}
+.rating{
+    font-size: 18px;
+    background-color: #2f5fa8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+.publication-year{
+    font-size: 16px;
+    background-color: #a81824;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.book-link-item{
+    text-decoration: none;
+
+}
