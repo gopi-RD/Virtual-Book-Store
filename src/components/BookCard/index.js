@@ -4,7 +4,7 @@ import BookContext from "../../context/BookContext"
 
 const BookCard=(props)=>{
     const {bookDetails,isButton}=props
-    const {id,title,author,genre,rating,image_url,publication_year,isAddLibrary}=bookDetails
+    const {id,title,author,genre,rating,image_url,publication_year}=bookDetails
 
     return (
         <BookContext.Consumer>
