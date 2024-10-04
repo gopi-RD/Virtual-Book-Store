@@ -6,7 +6,6 @@ const BookContext=React.createContext({
     updateCollections:()=>{},
     removeBookfromCollection:()=>{},
     isToggleBook:()=>{},
-    isShownButton:false
 })
 
 export default BookContext;

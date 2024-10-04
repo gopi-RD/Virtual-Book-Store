@@ -67,7 +67,6 @@ const list=[
 const App=()=>{ 
     const [bookList, setBookList] = useState(list)
     const [addCollections, setCollections]=useState([])
-    const [isShownButton,setShownButton] = useState(false)
 
     const updateCollections=(data)=>{
         setCollections(prevCollections=> [...prevCollections, data])
@@ -82,7 +81,7 @@ const App=()=>{
             }
             return eachItem
         }))
-        setShownButton(prevState=>!prevState)
+        
     }
    
     const removeBookfromCollection=(bookId)=>{

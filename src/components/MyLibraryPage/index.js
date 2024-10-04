@@ -13,11 +13,8 @@ const MyLibraryPage =()=>{
         <BookContext.Consumer>
             {
                 value=>{
-                    const {addCollections,isShownButton} = value; 
-                    console.log(addCollections);
-                    console.log(addCollections,"added")
-                    
-                   
+                    const {addCollections} = value; 
+
                     let filteredBooks = addCollections.filter(book => book.title.toLowerCase().includes(searchBook.toLowerCase()) || book.author.toLowerCase().includes(searchBook.toLowerCase()) || book.genre.toLowerCase().includes(searchBook.toLowerCase())); 
                
                     const onSearchBook = (event) => {
@@ -39,7 +36,7 @@ const MyLibraryPage =()=>{
                                 { 
                                         (
                                         filteredBooks.map(eachItem=>(
-                                            <BookCard bookDetails={eachItem} key={eachItem.id} isButton={isShownButton} />
+                                            <BookCard bookDetails={eachItem} key={eachItem.id} isButton={true} />
                                         )) )
                                 }
                                 
