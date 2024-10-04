@@ -43,7 +43,7 @@ const BookCard=(props)=>{
                             {
                                 isAddLibrary &&  
                                 <button className="remove-library" onClick={onRemoveFromCollection} >
-                                Remove Book
+                                {isAddLibrary?"Add Book to Library":"Remove Book from Library"}
                             </button>
                                 
                             }
