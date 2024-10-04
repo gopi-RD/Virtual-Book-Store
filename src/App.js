@@ -15,7 +15,8 @@ const list=[
         rating: 4.7,
         description: "A novel set in the Jazz Age that explores themes of wealth, love, and the American Dream.",
         publication_year: 1925,
-        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727961154/hlafphtvr9jklbpt3ccf.jpg"
+        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727961154/hlafphtvr9jklbpt3ccf.jpg",
+        isAddLibrary:false
         },
         {
         id: 2,
@@ -25,7 +26,8 @@ const list=[
         rating: 4.8,
         description: "A timeless novel of a child's moral awakening and a poignant tale of race and justice in the American South.",
         publication_year: 1960,
-        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727961488/o857dvyhgktbqrjxfi93.webp"
+        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727961488/o857dvyhgktbqrjxfi93.webp",
+        isAddLibrary:false
         },
         {
         id: 3,
@@ -35,7 +37,8 @@ const list=[
         rating: 4.6,
         description: "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
         publication_year: 1949,
-        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727962092/wonnz2esozutkcwfz8z5.webp"
+        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727962092/wonnz2esozutkcwfz8z5.webp",
+        isAddLibrary:false
         },
         {
         id: 4,
@@ -45,7 +48,8 @@ const list=[
         rating: 4.9,
         description: "A romantic novel that also serves as a social commentary on the British landed gentry of the early 19th century.",
         publication_year: 1813,
-        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727960701/smve5qosnhqjn2jrhysz.jpg"
+        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727960701/smve5qosnhqjn2jrhysz.jpg",
+        isAddLibrary:false
         },
         {
         id: 5,
@@ -55,7 +59,8 @@ const list=[
         rating: 4.3,
         description: "A story about a young boy’s journey through the challenges of adolescence.",
         publication_year: 1951,
-        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727962333/m9eucvskq8zgn9vd9xif.jpg"
+        image_url:"https://res.cloudinary.com/dzcpsxjuv/image/upload/v1727962333/m9eucvskq8zgn9vd9xif.jpg",
+        isAddLibrary:false
         }
 ]
 
@@ -66,10 +71,19 @@ const App=()=>{
     const updateCollections=(data)=>{
         setCollections(prevCollections=> [...prevCollections, data])
     }
-    console.log(addCollections)
+    
+    const removeBookfromCollection=(bookId)=>{
+        setCollections(prevCollections=>prevCollections.filter(book=>book.id!==bookId))
+    }
+
+    const isToggleBook=(id)=>{
+        const updatedList=bookList.map(book=>book.id===id? {...book, isAddLibrary:!book.isAddLibrary}:book)
+        setBookList(updatedList)
+    }
+
 
     return (
-        <BookContext.Provider value={{bookList,addCollections,updateCollections}}>
+        <BookContext.Provider value={{bookList,addCollections,updateCollections,removeBookfromCollection,isToggleBook}}>
            <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={HomePage}/>

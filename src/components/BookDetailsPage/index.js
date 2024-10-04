@@ -1,10 +1,9 @@
-import {useState} from "react"
+
 import BookContext from "../../context/BookContext";
 import Header from "../Header";
 
 import "./index.css"
 const BookDetailsPage=(props)=>{
-    const [isShowDetails, setShowDetails]=useState(false)
     const {match}=props 
     const {params}=match 
     const {id}=params
@@ -14,13 +13,13 @@ const BookDetailsPage=(props)=>{
         <BookContext.Consumer>
             {
                 value=>{
-                    const {bookList,addCollections,updateCollections}=value ;
+                    const {bookList,addCollections,updateCollections,isToggleBook}=value ;
 
                     let book=bookList.filter(book=>(book.id===parseInt(id)))
                     const onAddLibrary=()=>{
                         const searchBook=addCollections.find(book=>book[0].id===parseInt(id))
                         if (searchBook===undefined){
-                            setShowDetails(true)
+                            isToggleBook(id)
                             updateCollections(book)
                         }else{
                           
@@ -52,7 +51,7 @@ const BookDetailsPage=(props)=>{
                                             </span>
                                     </div>
                                     <button type="button" className="add-library" onClick={onAddLibrary}>
-                                             {isShowDetails? "Added Library":"Add Library"}
+                                             {book[0].isAddLibrary? "Added Library":"Add Library"}
                                     </button>
                                 </div>
 

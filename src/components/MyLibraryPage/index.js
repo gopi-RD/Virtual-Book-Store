@@ -35,7 +35,6 @@ const MyLibraryPage =()=>{
                             </div>
                             </div>
                             <ul className="book-list-items">
-                                
                                     
                                 { 
                                         (
