@@ -15,10 +15,10 @@ const MyLibraryPage =()=>{
                 value=>{
                     const {addCollections} = value; 
                     console.log(addCollections);
-                    console.log(addCollections[0])
+                    console.log(addCollections[0],"added")
                     
                    
-                    let filteredBooks = addCollections.filter(book => book.title.toLowerCase().includes(searchBook.toLowerCase()) || book.author.toLowerCase().includes(searchBook.toLowerCase()) || book.genre.toLowerCase().includes(searchBook.toLowerCase())); 
+                    let filteredBooks = addCollections[0].filter(book => book.title.toLowerCase().includes(searchBook.toLowerCase()) || book.author.toLowerCase().includes(searchBook.toLowerCase()) || book.genre.toLowerCase().includes(searchBook.toLowerCase())); 
                
                     const onSearchBook = (event) => {
                         setSearchBook(event.target.value);
