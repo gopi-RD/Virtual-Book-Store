@@ -73,10 +73,6 @@ const App=()=>{
         setCollections(prevCollections=> [...prevCollections, data])
     }
     
-    const removeBookfromCollection=(bookId)=>{
-        setCollections(prevCollections=>prevCollections.filter(book=>book.id!==bookId))
-        setShownButton(prevState=>!prevState)
-    }
 
     const isToggleBook=(id)=>{
         setBookList(prevState=>prevState.map(eachItem=>{
@@ -89,6 +85,10 @@ const App=()=>{
         setShownButton(prevState=>!prevState)
     }
    
+    const removeBookfromCollection=(bookId)=>{
+        setCollections(prevCollections=>prevCollections.filter(book=>book.id!==bookId))
+        isToggleBook(bookId)
+    }
 
 
 
