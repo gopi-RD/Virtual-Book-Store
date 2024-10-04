@@ -3,7 +3,7 @@ import "./index.css"
 import BookContext from "../../context/BookContext"
 
 const BookCard=(props)=>{
-    const {bookDetails}=props
+    const {bookDetails,isButton}=props
     const {id,title,author,genre,rating,image_url,publication_year,isAddLibrary}=bookDetails
 
     return (
@@ -41,12 +41,14 @@ const BookCard=(props)=>{
                                 </span>
                             </div>
                             {
-                                isAddLibrary &&  
+                                isButton && 
                                 <button className="remove-library" onClick={onRemoveFromCollection} >
-                                {isAddLibrary?"Add Book to Library":"Remove Book from Library"}
-                            </button>
-                                
+                                    
+                                    {isAddLibrary?"Remove Book from Collection":""}
+    
+                                </button>  // isAddLibrary &&
                             }
+                          
                         
                             
                         </li>
@@ -61,3 +63,11 @@ const BookCard=(props)=>{
 }
 
 export default BookCard;
+
+ /* 
+                               // isAddLibrary &&  
+                                <button className="remove-library" onClick={onRemoveFromCollection} >
+                                {isAddLibrary?"Add Book to Library":"Remove Book from Library"}
+                            </button>
+                                
+                            */

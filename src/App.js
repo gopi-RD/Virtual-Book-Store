@@ -67,6 +67,7 @@ const list=[
 const App=()=>{ 
     const [bookList, setBookList] = useState(list)
     const [addCollections, setCollections]=useState([])
+    const [isShownButton,setShownButton] = useState(false)
 
     const updateCollections=(data)=>{
         setCollections(prevCollections=> [...prevCollections, data])
@@ -74,24 +75,25 @@ const App=()=>{
     
     const removeBookfromCollection=(bookId)=>{
         setCollections(prevCollections=>prevCollections.filter(book=>book.id!==bookId))
+        setShownButton(prevState=>!prevState)
     }
 
     const isToggleBook=(id)=>{
-        
         setBookList(prevState=>prevState.map(eachItem=>{
             if (parseInt(id)===eachItem.id){
                 //console.log(eachItem)
-                return {...eachItem, isAddLibrary:!eachItem.isAddLibrary}
+                return {...eachItem, isAddLibrary:!eachItem.isAddLibrary} 
             }
             return eachItem
         }))
+        setShownButton(prevState=>!prevState)
     }
    
 
 
 
     return (
-        <BookContext.Provider value={{bookList,addCollections,updateCollections,removeBookfromCollection,isToggleBook}}>
+        <BookContext.Provider value={{bookList,addCollections,updateCollections,removeBookfromCollection,isToggleBook,isShownButton}}>
            <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={HomePage}/>

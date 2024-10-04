@@ -13,7 +13,7 @@ const MyLibraryPage =()=>{
         <BookContext.Consumer>
             {
                 value=>{
-                    const {addCollections} = value; 
+                    const {addCollections,isShownButton} = value; 
                     console.log(addCollections);
                     console.log(addCollections,"added")
                     
@@ -39,7 +39,7 @@ const MyLibraryPage =()=>{
                                 { 
                                         (
                                         filteredBooks.map(eachItem=>(
-                                            <BookCard bookDetails={eachItem} key={eachItem.id} />
+                                            <BookCard bookDetails={eachItem} key={eachItem.id} isButton={isShownButton} />
                                         )) )
                                 }
                                 

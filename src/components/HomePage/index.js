@@ -37,7 +37,7 @@ const HomePage =()=>{
                                 { 
                                         (
                                         filteredBooks.map(eachItem=>(
-                                            <BookCard bookDetails={eachItem} key={eachItem.id} />
+                                            <BookCard bookDetails={eachItem} key={eachItem.id} isButton={false} />
                                         )) )
                                 }
                                 
